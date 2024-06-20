@@ -1,0 +1,13 @@
+<form [formGroup]="catForm" (ngSubmit)="addCat()">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Category Name</label>
+      <input formControlName="cname" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="form-group">
+      <input type="file" (change)="cimage($event)" class="form-control">
+    </div>
+    <div class="form-group form-check">
+      <textarea formControlName="cabout"></textarea>
+    </div>
+    <button type="submit" [disabled]="catForm.invalid" class="btn btn-primary">Submit</button>
+  </form>

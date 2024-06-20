@@ -1,0 +1,32 @@
+<table class="table">
+    <tr>
+        <td colspan="4"><a class="btn btn-dark" routerLink="../add-cat">Add Category</a></td>
+    </tr>
+    
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">C Name</th>
+        <th scope="col">Image</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cat of catData;let i=index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{cat.cname|titlecase}}</td>
+        <td><img src="http://localhost:3000/images/{{cat.image}}" height="70px" ></td>
+        <td>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Action
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Update</a>
+              <a class="dropdown-item" href="javascript:void(0)" (click)="delCat(cat._id)">Delete</a>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>

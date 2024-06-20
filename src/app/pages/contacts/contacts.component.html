@@ -1,0 +1,31 @@
+<table class="table mt-4">
+    
+    <thead>
+        
+      <tr>
+        <th scope="col">S.No</th>
+        <th scope="col">Name</th>
+        <th scope="col">Mobile</th>
+        <th scope="col">Message</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contact of contactDetails;let i=index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{contact.name}}</td>
+        <td> {{contact.mobile}}</td>
+        <td>{{contact.message|slice:30}}</td>
+        <td>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Action
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+               <!-- <a class="dropdown-item" href="javascript:void(0)" (click)="delpost(contact._id)">Delete</a> -->
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>

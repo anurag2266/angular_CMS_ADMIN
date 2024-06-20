@@ -1,0 +1,50 @@
+<table class="table mt-4">
+    
+    <thead>
+        <tr>
+            <th colspan="4" class="text-center">
+                <a routerLink="../add-post" class="btn btn-primary" routerLinkActive="router-link-active" >
+                    Add Post
+                </a>
+            </th>
+        </tr>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Category Name</th>
+        <th scope="col">Image</th>
+        <th scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let addpost of postname;let i=index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{addpost.title}}</td>
+        <td> {{addpost.catname}}</td>
+        <td><img src="http://localhost:3000/images/{{addpost.image}}" height="70px" ></td>
+        <td>{{addpost.description}}</td>
+        <td>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Action
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="javascript:void(0)" (click)="delpost(addpost._id)">Delete</a>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <!-- <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Larry</td>
+        <td>the Bird</td>
+        <td>@twitter</td>
+      </tr> -->
+    </tbody>
+  </table>
